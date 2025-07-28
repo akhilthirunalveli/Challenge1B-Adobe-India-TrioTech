@@ -67,23 +67,17 @@ Follow these steps to run the application locally.
 
 🐳 For a more robust and portable solution, run the application inside a Docker container. This is the recommended approach as it works offline once the image is built.
 
-1.  *Prerequisite:* Ensure Docker Desktop is installed and running.
-2.  *Download the AI Model:* If you haven't already, run the download script once (this requires internet).
-    bash
-    python download_model.py
-    
-3.  *Build the Docker Image:*
-    bash
-    docker build -t doc-intel .
-    
-4.  *Run the Container:* This command runs the analysis and maps your local folder to the container so it can read your PDFs and write back the output.json file.
-    bash
-    # For macOS/Linux
-    docker run --rm -v "$(pwd)":/app doc-intel
+Step 1: Build Your Docker Image
 
-    # For Windows (Command Prompt/PowerShell)
-    docker run --rm -v "%cd%":/app doc-intel
-    
+From your Challenge1B-Adobe-India-TrioTech directory, build image first. Let's call it adobe-challenge.
+Bash
+```
+docker build -t adobe-challenge .
+```
+Step 2: For running container with volumes
+```
+docker run --rm -v "$(pwd)/pdfs:/app/pdfs:ro" -v "$(pwd)/output:/app/output" adobe-challenge
+```    
 
 -----
 
