@@ -2,8 +2,6 @@ import os
 import json
 import fitz
 import time
-from datetime import datetime, UTC
-datetime.now(UTC).isoformat()
 from collections import Counter
 from sentence_transformers import SentenceTransformer, util
 import warnings
@@ -159,8 +157,7 @@ class AdvancedDocumentIntel:
             "metadata": {
                 "input_documents": input_docs,
                 "persona": self.persona,
-                "job_to_be_done": self.job_to_be_done,
-                "processing_timestamp": datetime.utcnow().isoformat()
+                "job_to_be_done": self.job_to_be_done
             },
             "extracted_sections": [
                 {
