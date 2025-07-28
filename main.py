@@ -11,7 +11,7 @@ warnings.filterwarnings("ignore", category=FutureWarning, message="`encoder_atte
 
 class AdvancedDocumentIntel:
     """
-    An advanced system using a Sentence-BERT model for semantic understanding
+    An advanced system using a Sentence-BERT UTCmodel for semantic understanding
     to find and rank the most relevant document sections.
     """
     def __init__(self, input_path="challenge1b_input.json"):
