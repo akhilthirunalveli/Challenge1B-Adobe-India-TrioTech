@@ -1,9 +1,31 @@
 {
-  "challenge_info": {
-    "challenge_id": "round_1b_XXX",
-    "test_case_name": "specific_test_case"
-  },
-  "documents": [{"filename": "doc.pdf", "title": "Title"}],
-  "persona": {"role": "User Persona"},
-  "job_to_be_done": {"task": "Use case description"}
+    "challenge_info": {
+        "challenge_id": "round_1b_TestCase1",
+        "test_case_name": "Test Case 1"
+    },
+    "documents": [
+        {
+            "filename": "Research Paper 1 - Graph Neural Networks for Drug Discovery.pdf",
+            "title": "Research Paper 1 - Graph Neural Networks for Drug Discovery"
+        },
+        {
+            "filename": "Research Paper 2 - Graph Neural Networks for Drug Discovery.pdf",
+            "title": "Research Paper 2 - Graph Neural Networks for Drug Discovery"
+        },
+        {
+            "filename": "Research Paper 3 - Graph Neural Networks for Drug Discovery.pdf",
+            "title": "Research Paper 3 - Graph Neural Networks for Drug Discovery"
+        },
+        {
+            "filename": "Research Paper 4 - Graph Neural Networks for Drug Discovery.pdf",
+            "title": "Research Paper 4 - Graph Neural Networks for Drug Discovery"
+        }
+       
+    ],
+    "persona": {
+        "role": "PhD Researcher in Computational Biology"
+    },
+    "job_to_be_done": {
+        "task": "Prepare a comprehensive literature review focusing on methodologies, datasets, and performance benchmarks"
+    }
 }

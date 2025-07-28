@@ -18,5 +18,7 @@ COPY main_docker.py .
 COPY input.json .
 COPY pdfs/ ./pdfs/
 
+RUN mkdir -p /app/output
+
 # Command to run the application when the container starts
-CMD ["python", "main_docker.py"]
+CMD ["python", "main.py"]

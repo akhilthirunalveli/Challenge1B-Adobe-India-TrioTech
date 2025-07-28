@@ -1,0 +1,72 @@
+{
+    "metadata": {
+        "input_documents": [
+            "Research Paper 1 - Graph Neural Networks for Drug Discovery.pdf",
+            "Research Paper 2 - Graph Neural Networks for Drug Discovery.pdf",
+            "Research Paper 3 - Graph Neural Networks for Drug Discovery.pdf",
+            "Research Paper 4 - Graph Neural Networks for Drug Discovery.pdf"
+        ],
+        "persona": "PhD Researcher in Computational Biology",
+        "job_to_be_done": "Prepare a comprehensive literature review focusing on methodologies, datasets, and performance benchmarks",
+        "processing_timestamp": "2025-07-28T16:30:37.256369"
+    },
+    "extracted_sections": [
+        {
+            "document": "Research Paper 3 - Graph Neural Networks for Drug Discovery.pdf",
+            "section_title": "Data availability statement",
+            "importance_rank": 1,
+            "page_number": 17
+        },
+        {
+            "document": "Research Paper 4 - Graph Neural Networks for Drug Discovery.pdf",
+            "section_title": "4.1",
+            "importance_rank": 2,
+            "page_number": 9
+        },
+        {
+            "document": "Research Paper 2 - Graph Neural Networks for Drug Discovery.pdf",
+            "section_title": "Materials and methods",
+            "importance_rank": 3,
+            "page_number": 4
+        },
+        {
+            "document": "Research Paper 3 - Graph Neural Networks for Drug Discovery.pdf",
+            "section_title": "Rank",
+            "importance_rank": 4,
+            "page_number": 11
+        },
+        {
+            "document": "Research Paper 1 - Graph Neural Networks for Drug Discovery.pdf",
+            "section_title": "between two cancer cell line data sets.  Nature   528 , 84–87 (2015).",
+            "importance_rank": 5,
+            "page_number": 13
+        }
+    ],
+    "subsection_analysis": [
+        {
+            "document": "Research Paper 1 - Graph Neural Networks for Drug Discovery.pdf",
+            "refined_text": "37.\t Wang, Y. et al. PubChem: A public information system for analyzing bioactivities of small molecules.  Nucleic Acids Res.   37 , W623– W633 (2009). \t38.\t RDKit: Open-source cheminformatics.  http://www.rdkit.org . [Online; Accessed 11-Apr.-2013]. \t39.\t Duan, Q. et al. L1000cds2: Lincs 1000 characteristic direction signatures search engine.  NPJ Syst. Biol. Appl.   2 , 1–12 (2016). \t40.\t Ramsundar, B. et al.  Deep Learning for the Life Sciences  (O’Reilly Media, 2019).  ​h​t​t​p​s​:​/​/​w​w​w​.​a​m​a​z​o​n​.​c​o​m​/​D​e​e​p​-​L​e​a​r​n​i​n​g​-​L​i​f​e​-​S​c​i​ e​n​c​e​s​-​M​i​c​r​o​s​c​o​p​y​/​d​p​/​1​4​9​2​0​3​9​8​3​7​ .​ \t41.\t Vaswani, A. et al. Attention is all you need.  Advances in Neural Information Processing Systems   30  (2017). \t42.\t Kipf, T. N. & Welling, M. Semi-supervised classification with graph convolutional networks. arXiv preprint  arXiv:1609.02907   (2016). \t43.\t Veličković, P. et al. Graph attention networks. arXiv preprint  arXiv:1710.10903  (2017). \t44.\t Schlichtkrull, M. et al. Modeling relational data with graph convolutional networks. In  European Semantic Web Conference , 593– 607 (Springer, 2018). \t45.\t Busbridge, D., Sherburn, D., Cavallo, P. & Hammerla, N. Y. Relational graph attention networks. arXiv preprint  arXiv:1904.05811   (2019). \t46.\t Brody, S., Alon, U. & Yahav, E. How attentive are graph attention networks? arXiv preprint  arXiv:2105.14491  (2021). \t47.\t Kokhlikyan, N.  et al.  Captum: A unified and generic model interpretability library for pytorch. arXiv preprint  arXiv:2009.07896   (2020). \t48.\t Shrikumar, A., Greenside, P., Shcherbina, A. & Kundaje, A. Not just a black box: Learning important features through propagating  activation differences. arXiv preprint  arXiv:1605.01713  (2016). \t49.\t Bach, S. et al. On pixel-wise explanations for non-linear classifier decisions by layer-wise relevance propagation.  PloS One   10 ,  e0130140 (2015). \t50.\t Shrikumar, A., Greenside, P. & Kundaje, A. Learning important features through propagating activation differences. In  International  Conference on Machine Learning , 3145–3153 (PMLR, 2017). \t51.\t Yuan, H., Yu, H., Wang, J., Li, K. & Ji, S. On explainability of graph neural networks via subgraph explorations. In  International  Conference on Machine Learning , 12241–12252 (PMLR, 2021). \t52.\t Paszke, A.  et al.  Pytorch: An imperative style, high-performance deep learning library. In Wallach, H. et al. (eds.)  Advances in  Neural Information Processing Systems 32 , 8024–8035 (Curran Associates, Inc., 2019). \t53.\t Fey, M. & Lenssen, J. E. Fast graph representation learning with pytorch geometric. arXiv preprint  arXiv:1903.02428  (2019). \t54.\t Berman, H. M. et al. The protein data bank.  Nucleic Acids Res.   28 , 235–242 (2000). \t55.\t Lu, J., Xia, S., Lu, J. & Zhang, Y. Dataset construction to explore chemical space with 3d geometry and deep learning.  J. Chem. Inf.",
+            "page_number": 13
+        },
+        {
+            "document": "Research Paper 2 - Graph Neural Networks for Drug Discovery.pdf",
+            "refined_text": "Datasets To well compare the performance of descriptor-based  and graph-based models, the dataset collection related  to drug discovery used by Attentive FP was also adopted  in this study [ 27 ]. This dataset collection contains 11 dif- ferent datasets originally reported in MoleculeNet for a  variety of chemical endpoints [ 32 ]. In the study reported  by Xiong et al. [ 27 ], the molecules that could not be suc- cessfully processed by RDKit [ 43 ] or the Attentive FP  model were excluded from the original datasets. The  details of those datasets are summarized in Table   2 .  Here, three datasets were used for the regression tasks,  including ESOL, FreeSolv, and Lipop, and the remain- ing eight datasets were used for the classification tasks,  which can be further divided into the single-task datasets  (ESOL, FreeSolv, Lipop, HIV, BACE, and BBBP) and the  multi-task datasets (CilnTox, SIDER, Tox21, ToxCast,  and MUV). Notably, we found that, in the ToxCast multi- task datasets, some subdatasets are extremely imbal- anced (the ratio of two classes is higher than 50) or quite  small (the number of compounds is smaller than 500).  impressive performance in modelling a variety of chemi- cal properties in comparison with several other graph- based methods. A majority of those studies claimed that  graph-based models are typically superior or comparable  to traditional descriptor-based models [ 24 ,  30 – 35 ], and  only a few studies gave the opposite conclusions [ 36 ].  For example, in 2017, Wu et  al. reported MoleculeNet,  a large benchmark for molecular machine learning, and  the evaluation results illustrated that graph-based meth- ods  outperformed descriptor-based methods on most  datasets [ 32 ]. Similarly, in 2019, Yang et al. introduced a  novel GNN framework named directed message passing  neural networks (D-MPNN), and the extensive evalua- tion on a large dataset collection indicated that D-MPNN  consistently matched or outperformed descriptor-based  methods on most datasets [ 24 ]. More recently, Korolev  et al. reported a universal graph convolutional networks  (GCN) architecture for the predictions of various chemi- cal endpoints [ 33 ], and the application of GCN illustrated  that its performance was comparable to state-of-the-art  ML algorithms such as SVM, RF, and gradient boosting  decision trees (GBDT).  In most of these reported studies, traditional ML  models such as LR, RF, SVM (especially ‘gold stand- ard’ RF) [ 31 ,  37 ] were employed to develop the predic- tion models based on a set of individual fingerprints  (especially Extended Connectivity Fingerprints, ECFP)  [ 31 – 33 ]. However, it is well known that the performance  of descriptor-based models is highly depending on the  descriptors used in training and many previous studies  have highlighted that ML models only based on molec- ular fingerprints are not such well-performing [ 4 ,  5 ,  38 ,  39 ]. In addition, little attention was paid to several newly  state-of-the-art ML algorithms, such as XGBoost and  LightGBM, which have illustrated great potentials for  modelling various molecular properties [ 39 – 42 ]. Accord- ingly, the conclusion that graph-based methods outper- form traditional descriptor-based methods still remains  controversial. The present study attempts to give a comprehensive  evaluation of descriptor-based and graph-based models  on 11 public datasets with different property endpoints.  Four ML algorithms were used to develop the descriptor- based models, including SVM, extreme gradient boost- ing (XGBoost), RF and deep neural networks (DNN).  In order to better represent the chemical and structure  features of the molecules for the descriptor-based mod- els, the combination of one set of molecular descriptors  (206 MOE 1-D and 2-D descriptors) and two sets of fin- gerprints (881 PubChem fingerprints and 307 substruc- ture fingerprints) were considered, and such molecular  representations are also commonly seen and easily acces- sible. Three typical GNN architectures (GCN, GAT",
+            "page_number": 4
+        },
+        {
+            "document": "Research Paper 3 - Graph Neural Networks for Drug Discovery.pdf",
+            "refined_text": "Document (Author/ Year/Journal) Title Year Global citations Local citations 1 Zitnik M, 2018, Bioinformatics modeling polypharmacy side effects with graph convolutional 2018 526 81 2 Altae-Tran H, 2017, Acs Central Sci low data drug discovery with one-shot learning 2017 390 31 3 Xiong Zp, 2020, J Med Chem pushing the boundaries of molecular representation for drug discovery with the graph attention mechanism 2020 273 72 4 Tsubaki M, 2019, Bioinformatics compound-protein interaction prediction with end-to-end learning of neural networks for graphs and sequences 2019 260 53 5 Nguyen T, 2021, Bioinformatics graphdta: predicting drug-target binding af ﬁ nity with graph neural networks 2021 215 61 6 Sun My, 2020, Brief Bioinform graph convolutional networks for computational drug development and discovery 2020 182 48 7 Li Y, 2019, Methods deep learning in bioinformatics: introduction, application, and perspective in the big data era 2019 168 1 8 Lim J, 2019, J Chem Inf Model predicting drug-target interaction using a novel graph neural network with 3days structure-embedded graph representation 2019 166 35 2021 166 26 9 Jiang Dj, 2021, J Cheminformatics could graph neural networks learn better molecular representation for drug discovery? a comparison study of descriptor-based and graph-based modelsSource 10 Torng W, 2019, J Chem Inf Model graph convolutional neural networks for predicting drug-target interactions 2019 153 42 FIGURE 7 Top 25 references with the strongest citation bursts. Frontiers in  Pharmacology frontiersin.org 11",
+            "page_number": 11
+        },
+        {
+            "document": "Research Paper 3 - Graph Neural Networks for Drug Discovery.pdf",
+            "refined_text": "The original contributions presented in the study are included in the article/supplementary material, further inquiries can be directed to the corresponding authors. formulate and follow scienti ﬁ c and reasonable speci ﬁ cations in drug discovery applications, which is crucial to ensuring data availability and regulatory compliance. The third is the model ’ s computing resources. GNN models usually require extensive computing resources to train, especially when processing large-scale bioinformatics datasets. How to effectively utilize limited computing resources and improve model training ef ﬁ ciency is a problem that needs to be solved. Therefore, developing novel GNN models that comply with clinical data ethics and regulatory frameworks, have high computational ef ﬁ ciency and predictive performance, lower computing resources, and better interpretability is a key technical issue to promote better drug discovery in the future.",
+            "page_number": 17
+        },
+        {
+            "document": "Research Paper 4 - Graph Neural Networks for Drug Discovery.pdf",
+            "refined_text": "Dataset Description To evaluate our method, a set of experiments were run on the Quantum Machine 9 (QM9) dataset [42], which is a subset of GDB–17, a chemical universe of 166 billion molecules [44]. QM9 is an ideal benchmark for a new generative model for molecular",
+            "page_number": 9
+        }
+    ]
+}

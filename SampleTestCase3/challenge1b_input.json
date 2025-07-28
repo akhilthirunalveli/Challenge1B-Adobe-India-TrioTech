@@ -1,9 +1,22 @@
 {
-  "challenge_info": {
-    "challenge_id": "round_1b_XXX",
-    "test_case_name": "specific_test_case"
-  },
-  "documents": [{"filename": "doc.pdf", "title": "Title"}],
-  "persona": {"role": "User Persona"},
-  "job_to_be_done": {"task": "Use case description"}
+    "challenge_info": {
+        "challenge_id": "round_1b_TestCase2",
+        "test_case_name": "Test Case 2"
+    },
+    "documents": [
+        {
+            "filename": "Organic Chemistry - Chapter 1.pdf",
+            "title": "Organic Chemistry - Chapter 1"
+        },
+        {
+            "filename": "Organic Chemistry.pdf",
+            "title": "Organic Chemistry"
+        }
+    ],
+    "persona": {
+        "role": "Undergraduate Chemistry Student"
+    },
+    "job_to_be_done": {
+        "task": "Identify key concepts and mechanisms for exam preparation on reaction kinetics"
+    }
 }

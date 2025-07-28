@@ -1,0 +1,71 @@
+{
+    "metadata": {
+        "input_documents": [
+            "Abobe-2024-annual-report.pdf",
+            "Cognizant-2024-annual-report.pdf",
+            "Uber-2024-annual-report.pdf"
+        ],
+        "persona": "Investment Analyst",
+        "job_to_be_done": "Analyze revenue trends, R&D investments, and market positioning strategies",
+        "processing_timestamp": "2025-07-28T16:33:57.287781"
+    },
+    "extracted_sections": [
+        {
+            "document": "Abobe-2024-annual-report.pdf",
+            "section_title": "Investments",
+            "importance_rank": 1,
+            "page_number": 18
+        },
+        {
+            "document": "Abobe-2024-annual-report.pdf",
+            "section_title": "Our stock price may be volatile and your investment could lose value.",
+            "importance_rank": 2,
+            "page_number": 34
+        },
+        {
+            "document": "Uber-2024-annual-report.pdf",
+            "section_title": "Performance Graph",
+            "importance_rank": 3,
+            "page_number": 52
+        },
+        {
+            "document": "Uber-2024-annual-report.pdf",
+            "section_title": "Research and Development",
+            "importance_rank": 4,
+            "page_number": 11
+        },
+        {
+            "document": "Cognizant-2024-annual-report.pdf",
+            "section_title": "Base",
+            "importance_rank": 5,
+            "page_number": 43
+        }
+    ],
+    "subsection_analysis": [
+        {
+            "document": "Abobe-2024-annual-report.pdf",
+            "refined_text": "From time to time, we make direct investments in privately held companies. We enter these investments with the intent  of securing financial returns as well as for strategic purposes, as they often increase our knowledge of technological  developments in the industry and expand our opportunities to provide Adobe products, services, and solutions.",
+            "page_number": 18
+        },
+        {
+            "document": "Abobe-2024-annual-report.pdf",
+            "refined_text": "Our stock price has been and may continue to be volatile and subject to fluctuations. All factors described in this Part I,  Item 1A of this report, some of which are beyond our control, may affect our stock price, including: • shortfalls in our results or shortfalls, changes to estimates, recommendations or expectations in guidance we provide  or provided by financial analysts about our revenue, margins, earnings, annualized recurring revenue, growth rates  or other key performance metrics;  • changes in investor and analyst valuation models for our stock;  • changes in unearned revenue, remaining performance obligations and revenue recognized at a point in time, all of  which may impact implied growth rates;  • developments related to products or services, technological advancements, strategic alliances, acquisitions or  significant transactions by us or our competitors;  • changes in the amounts or frequency of stock repurchases;  • the loss of large customers or our inability to retain or increase sales to existing customers or attract new customers;  • changes to our management team, including recruitment or departure of key personnel;  • variations in our or our competitors’ results of operations, changes in the competitive landscape generally and  developments in our industry;  • general economic, political or market conditions; and  • other events, such as significant litigation and regulatory actions and media and social media scrutiny. In addition, the market for technology stocks or the stock market in general has experienced, and may in the future  experience, extreme fluctuations, which has caused, and may in the future cause, our stock price to decline for reasons unrelated  to our financial performance. Volatility in our stock price has increased, and may continue to increase, our susceptibility to  securities class action litigation, which could result in substantial costs and divert management’s attention and resources, which  may adversely affect our business.",
+            "page_number": 34
+        },
+        {
+            "document": "Cognizant-2024-annual-report.pdf",
+            "refined_text": "Period 12/31/19 12/31/20 12/31/21 12/31/22 12/31/23 12/31/24 Cognizant Technology Solutions Corp $  100 $ 133.93 $ 146.84 $  96.12 $ 129.16 $ 133.62  S&P 500 Index   100   118.40   152.39   124.79   157.59   197.02  S&P 500 Information Technology Index   100   143.89   193.58   139.00   219.40   299.72  (1) Graph assumes $100 invested on December 31, 2019 in our Class A common stock, the S&P 500 Index and the S&P  500 Information Technology Index. (2) Cumulative total return assumes reinvestment of dividends.",
+            "page_number": 43
+        },
+        {
+            "document": "Uber-2024-annual-report.pdf",
+            "refined_text": "Because the industries in which we compete are characterized by rapid technological advances, our ability to compete  successfully depends heavily upon our ability to ensure a continual and timely flow of competitive new offerings and technologies. We  continue to develop new technologies to enhance existing offerings and services, and to expand the range of our offerings through  research and development (“R&D”) and acquisition of third-party businesses and technology.",
+            "page_number": 11
+        },
+        {
+            "document": "Uber-2024-annual-report.pdf",
+            "refined_text": "This performance graph shall not be deemed “soliciting material” or to be “filed” with the SEC for purposes of Section 18 of the  Exchange Act, or otherwise subject to the liabilities under that Section, and shall not be deemed to be incorporated by reference into  any filing of Uber Technologies, Inc. under the Securities Act, or the Exchange Act.  The following graph compares the cumulative total return to stockholders on our common stock relative to the cumulative total  returns of the Standard & Poor’s 500 Index (“S&P 500”), S&P 500 Information Technology Sector Index (“S&P 500 IT”) and the  Nasdaq Composite Index (“NASDAQ”). An investment of $100 (with reinvestment of all dividends) is assumed to have been made in  our common stock and in each index on December 31, 2019, and its relative performance is tracked through December 31, 2024. The  returns shown are based on historical results and are not intended to suggest future performance.",
+            "page_number": 52
+        }
+    ]
+}

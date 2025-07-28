@@ -1,20 +1,22 @@
 import os
 import json
-import fitz  # PyMuPDF
-import time  # Import the time module
-from datetime import datetime
+import fitz
+import time
+from datetime import datetime, UTC
+datetime.now(UTC).isoformat()
 from collections import Counter
 from sentence_transformers import SentenceTransformer, util
 import warnings
 
 warnings.filterwarnings("ignore", category=UserWarning, message="torch.utils._pytree._register_pytree_node is deprecated")
+warnings.filterwarnings("ignore", category=FutureWarning, message="`encoder_attention_mask` is deprecated")
 
 class AdvancedDocumentIntel:
     """
     An advanced system using a Sentence-BERT model for semantic understanding
     to find and rank the most relevant document sections.
     """
-    def __init__(self, input_path="input.json"):
+    def __init__(self, input_path="challenge1b_input.json"):
         """Initializes the system by loading the input file and the ML model."""
         with open(input_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
@@ -26,7 +28,7 @@ class AdvancedDocumentIntel:
 
         # Define other parameters since they are not in input.json
         self.pdf_dir = "pdfs"
-        self.output_file = "output.json"
+        self.output_dir = "output"
         self.top_k_sections = 5
         self.max_sections_per_document = 2
         self.min_section_length = 100
@@ -37,9 +39,9 @@ class AdvancedDocumentIntel:
         model_path = './model_cache' 
         
         # Load the pre-trained Sentence-BERT model from the local path.
-        print(f"🤖 Loading sentence-transformer model from local path: {model_path}...")
+        print(f"Loading sentence-transformer model from local path: {model_path}...")
         self.model = SentenceTransformer(model_path)
-        print("✅ Model loaded.")
+        print("Model loaded.")
 
     def _is_heading(self, line_text: str, spans: list, body_font_size: float) -> bool:
         """
@@ -149,62 +151,84 @@ class AdvancedDocumentIntel:
         return selected_sections
 
     def _generate_output(self, top_sections: list, input_docs: list):
-        """Formats the ranked sections into the required JSON output structure."""
+        """Formats the ranked sections into a single JSON output structure as requested."""
+        from pathlib import Path
+        output_dir = Path(self.output_dir)
+        output_dir.mkdir(parents=True, exist_ok=True)
         output = {
-            "metadata": {"input_documents": input_docs, "persona": self.persona, "job_to_be_done": self.job_to_be_done, "processing_timestamp": datetime.utcnow().isoformat()},
-            "extracted_sections": [{"document": sec["document"], "section_title": sec["title"], "importance_rank": i + 1, "page_number": sec["page_number"]} for i, sec in enumerate(top_sections)],
-            "subsection_analysis": [{"document": sec["document"], "refined_text": sec["content"], "page_number": sec["page_number"]} for sec in sorted(top_sections, key=lambda x: (x['document'], x['page_number']))]
+            "metadata": {
+                "input_documents": input_docs,
+                "persona": self.persona,
+                "job_to_be_done": self.job_to_be_done,
+                "processing_timestamp": datetime.utcnow().isoformat()
+            },
+            "extracted_sections": [
+                {
+                    "document": sec["document"],
+                    "section_title": sec["title"],
+                    "importance_rank": i + 1,
+                    "page_number": sec["page_number"]
+                } for i, sec in enumerate(top_sections)
+            ],
+            "subsection_analysis": [
+                {
+                    "document": sec["document"],
+                    "refined_text": sec["content"],
+                    "page_number": sec["page_number"]
+                } for sec in sorted(top_sections, key=lambda x: (x['document'], x['page_number']))
+            ]
         }
-        with open(self.output_file, "w", encoding="utf-8") as f:
+        output_file = output_dir / "challenge1b_output.json"
+        with open(output_file, "w", encoding="utf-8") as f:
             json.dump(output, f, indent=4, ensure_ascii=False)
 
     def run(self):
         """Executes the full document intelligence pipeline."""
-        print("🚀 Starting Advanced Document Intelligence pipeline...")
+        print("Starting Advanced Document Intelligence pipeline...")
         all_sections, input_documents = [], []
         
         if not self.documents_info:
-            print(f"❌ No documents listed in 'input.json'.")
+            print(f"No documents listed in 'input.json'.")
             return
 
-        print(f"📚 Found {len(self.documents_info)} PDF(s) listed in input. Extracting logical sections...")
+        print(f"Found {len(self.documents_info)} PDF(s) listed in input. Extracting logical sections...")
         for doc_info in self.documents_info:
             filename = doc_info['filename']
             filepath = os.path.join(self.pdf_dir, filename)
 
             if not os.path.exists(filepath):
-                print(f"⚠️ Could not find file '{filename}' in '{self.pdf_dir}' directory. Skipping.")
+                print(f"Could not find file '{filename}' in '{self.pdf_dir}' directory. Skipping.")
                 continue
 
             try:
                 all_sections.extend(self._extract_logical_sections(filepath))
                 input_documents.append(filename)
             except Exception as e:
-                print(f"⚠️ Could not process '{filename}'. Error: {e}. Skipping file.")
+                print(f"Could not process '{filename}'. Error: {e}. Skipping file.")
 
-        print(f"🔍 Extracted {len(all_sections)} sections. Preparing query...")
+        print(f"Extracted {len(all_sections)} sections. Preparing query...")
         query = f"Task for {self.persona}: {self.job_to_be_done}."
 
-        print("🧠 Computing semantic relevance and ranking sections...")
+        print("Computing semantic relevance and ranking sections...")
         top_sections = self._compute_semantic_rank(all_sections, query)
 
         if not top_sections:
-            print("⚠️ No relevant sections found. Output will be generated with empty results.")
+            print("No relevant sections found. Output will be generated with empty results.")
             
-        print(f"📝 Generating output for top {len(top_sections)} sections...")
+        print(f"Generating output for top {len(top_sections)} sections...")
         self._generate_output(top_sections, input_documents)
-        print(f"✅ Done. Output written to {self.output_file}")
+        print(f"Done. Output written to {self.output_dir}")
 
 
 if __name__ == "__main__":
-    if not os.path.exists("input.json"):
-        print("❌ Error: input.json not found. Please create it before running.")
+    if not os.path.exists("challenge1b_input.json"):
+        print("Error: input.json not found. Please create it before running.")
     else:
         start_time = time.monotonic()
         
-        intel_system = AdvancedDocumentIntel("input.json")
+        intel_system = AdvancedDocumentIntel("challenge1b_input.json")
         intel_system.run()
 
         end_time = time.monotonic()
         duration = end_time - start_time
-        print(f"⏱️ Total execution time: {duration:.2f} seconds.")
+        print(f"Total execution time: {duration:.2f} seconds.")
