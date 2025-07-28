@@ -14,8 +14,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY ./model_cache /app/model_cache
 
 # Copy the application files and data into the image
-COPY main_docker.py .
-COPY input.json .
+COPY main.py .
+COPY challenge1b_input.json .
 COPY pdfs/ ./pdfs/
 
 RUN mkdir -p /app/output
