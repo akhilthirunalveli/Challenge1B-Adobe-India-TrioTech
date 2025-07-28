@@ -5,6 +5,9 @@ import time  # Import the time module
 from datetime import datetime
 from collections import Counter
 from sentence_transformers import SentenceTransformer, util
+import warnings
+
+warnings.filterwarnings("ignore", category=UserWarning, message="torch.utils._pytree._register_pytree_node is deprecated")
 
 class AdvancedDocumentIntel:
     """
